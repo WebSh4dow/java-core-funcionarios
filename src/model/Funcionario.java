@@ -1,67 +1,34 @@
 package model;
 
-import java.io.Serializable;
-import java.math.BigDecimal;
+import enums.Cargo;
+import repository.FuncionarioRepository;
 
-public class Funcionario implements Serializable {
+abstract class Funcionario implements FuncionarioRepository {
 
-	private static final long serialVersionUID = 1L;
-	
 	private String nome;
-	
-	private String cargo;
-	
+	private Cargo cargo;
 	private String dataContratacao;
-	
-	private Double mesesServico = 0.0;
-	
-	private Double salario = 0.0;
-	
-	
-	
-	public Funcionario(Double mesesServico ,String nome, String cargo, String dataContratacao, Double salario) {
-		super();
+	private double salario = 0.0;
+
+	public Funcionario(String nome, Cargo cargo, String dataContratacao, double salario) {
 		this.nome = nome;
 		this.cargo = cargo;
-		this.dataContratacao = dataContratacao;
-		this.salario = salario;
-		this.mesesServico = mesesServico;
-	}
-	
-	public Double getSalario() {
-		return salario;
+		this.setSalario(salario);
+		this.setDataContratacao(dataContratacao);
 	}
 
-	public void setSalario(Double salario) {
-		this.salario = salario;
-	}
-	
-	public Double getMesesServico() {
-		return mesesServico;
-	}
-	
-	public void setMesesServico(Double mesesServico) {
-		this.mesesServico = mesesServico;
-	}
+	public abstract double calcularSalario();
 
-	public Funcionario() {
-		
-	}
+	public abstract double calcularBeneficio();
+	
+	public abstract int calcularAnosServico(String dataContratacao);
 
 	public String getNome() {
 		return nome;
 	}
 
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-
-	public String getCargo() {
+	public Cargo getCargo() {
 		return cargo;
-	}
-
-	public void setCargo(String cargo) {
-		this.cargo = cargo;
 	}
 
 	public String getDataContratacao() {
@@ -71,7 +38,13 @@ public class Funcionario implements Serializable {
 	public void setDataContratacao(String dataContratacao) {
 		this.dataContratacao = dataContratacao;
 	}
-	
-	
-	
+
+	public double getSalario() {
+		return salario;
+	}
+
+	public void setSalario(double salario) {
+		this.salario = salario;
+	}
+
 }
