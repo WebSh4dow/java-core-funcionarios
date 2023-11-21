@@ -7,23 +7,23 @@ import model.Vendedor;
 public class FinanceiroVendedor {
 
 	public Vendedor obterVendedorMaiorVenda(List<Vendedor> funcionarios, List<Venda> vendas) {
-	    Vendedor vendedorMaiorVenda = null;
-	    double maiorVenda = 0.0;
+		Vendedor vendedorMaiorVenda = null;
+		double maiorVenda = 0.0;
 
-	    for (Vendedor vendedor : funcionarios) {
-	        double vendaNoMes = calcularVendaDoVendedor(vendas, vendedor.getNome());
+		for (Vendedor vendedor : funcionarios) {
+			double vendaNoMes = calcularVendaDoVendedor(vendas, vendedor.getNome());
 
-	        if (vendaNoMes > maiorVenda) {
-	            maiorVenda = vendaNoMes;
-	            vendedorMaiorVenda = vendedor;
-	        }
-	    }
+			if (vendaNoMes > maiorVenda) {
+				maiorVenda = vendaNoMes;
+				vendedorMaiorVenda = vendedor;
+			}
+		}
 
-	    return vendedorMaiorVenda;
+		return vendedorMaiorVenda;
 	}
 
 	private double calcularVendaDoVendedor(List<Venda> vendas, String nomeVendedor) {
-	    double totalVenda = 0.0;
+		double totalVenda = 0.0;
 
 		for (Venda venda : vendas) {
 
@@ -33,9 +33,9 @@ public class FinanceiroVendedor {
 
 		}
 
-	    return totalVenda;
+		return totalVenda;
 	}
-	
+
 	public double calcularTotalSalarios(List<Vendedor> funcionarios) {
 		double totalSalarios = 0.0;
 		for (Vendedor funcionario : funcionarios) {
@@ -44,7 +44,6 @@ public class FinanceiroVendedor {
 		return totalSalarios;
 	}
 
-	
 	public double calcularTotalBeneficios(List<Vendedor> funcionarios) {
 		double totalBeneficios = 0.0;
 		for (Vendedor funcionario : funcionarios) {
@@ -68,7 +67,6 @@ public class FinanceiroVendedor {
 		return funcionarioMaiorValor;
 	}
 
-	
 	public Vendedor obterFuncionarioMaiorBeneficio(List<Vendedor> funcionarios) {
 		Vendedor funcionarioMaiorBeneficio = null;
 		double maiorBeneficio = 0.0;

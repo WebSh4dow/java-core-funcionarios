@@ -20,9 +20,9 @@ abstract class Funcionario implements FuncionarioRepository {
 	public abstract double calcularSalario();
 
 	public abstract double calcularBeneficio();
-	
+
 	public abstract int calcularAnosServico(String dataContratacao);
-	
+
 	public abstract String formatarSalario();
 
 	public String getNome() {
@@ -48,15 +48,11 @@ abstract class Funcionario implements FuncionarioRepository {
 	public void setSalario(double salario) {
 		this.salario = salario;
 	}
-	
-	
+
 	@Override
-    public String toString() {
-        return "Funcionario{" +
-                "nome='" + nome + '\'' +
-                ", dataContratacao='" + dataContratacao + '\'' +
-                ", salario=" + salario +
-                '}';
-    }
+	public String toString() {
+		return "Funcionario{" + "nome='" + nome + '\'' + ", dataContratacao='" + dataContratacao + '\'' + ", salario="
+				+ salario + '}';
+	}
 
 }

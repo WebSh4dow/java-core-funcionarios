@@ -8,21 +8,21 @@ import java.util.Locale;
 import enums.Cargo;
 
 public class Secretario extends Funcionario {
-	
-    public Secretario(String nome, String dataContratacao, double salario) {
-        super(nome, Cargo.SECRETARIO, dataContratacao, salario);
-    }
 
-    @Override
-    public double calcularSalario() {
-    	return getSalario() + calcularBeneficio() + 0.2 * getSalario();
-    }
+	public Secretario(String nome, String dataContratacao, double salario) {
+		super(nome, Cargo.SECRETARIO, dataContratacao, salario);
+	}
 
-    @Override
-    public double calcularBeneficio() {
-        int anosServico = calcularAnosServico(getDataContratacao().toString());
-        return anosServico * getSalario();
-    }
+	@Override
+	public double calcularSalario() {
+		return getSalario() + calcularBeneficio() + 0.2 * getSalario();
+	}
+
+	@Override
+	public double calcularBeneficio() {
+		int anosServico = calcularAnosServico(getDataContratacao().toString());
+		return anosServico * getSalario();
+	}
 
 	@Override
 	public int calcularAnosServico(String dataContratacao) {
@@ -33,10 +33,10 @@ public class Secretario extends Funcionario {
 		long anos = ChronoUnit.YEARS.between(dataContratacaoFormatada, hoje);
 		return (int) anos;
 	}
-	
+
 	@Override
-    public String formatarSalario() {
-        return NumberFormat.getCurrencyInstance(Locale.getDefault()).format(getSalario());
-    }
-	
+	public String formatarSalario() {
+		return NumberFormat.getCurrencyInstance(Locale.getDefault()).format(getSalario());
+	}
+
 }
