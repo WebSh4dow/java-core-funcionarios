@@ -1,11 +1,7 @@
 package implementation;
 
 import java.util.List;
-
-import model.Gerente;
 import model.Secretario;
-import model.Venda;
-import model.Vendedor;
 
 public class FinanceiroSecretario {
 	
