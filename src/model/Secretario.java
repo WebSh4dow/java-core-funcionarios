@@ -19,7 +19,7 @@ public class Secretario extends Funcionario {
     @Override
     public double calcularBeneficio() {
         int anosServico = calcularAnosServico(getDataContratacao());
-        return anosServico * 1000.0;
+        return anosServico * getSalario();
     }
 
     @Override
